@@ -45,7 +45,7 @@ TODO: create a sample image
    - if the script doesn't exist, it will inform of the file not available, then move on to the next node
 4. Installs k3s on the server node from the controller using the `k3sup install` command
    - Due to some proxy & network issues using **multipass**, there are `--k3s-extra-args` I use here to force the internal and external ip of the server node
-   - This was the solution I found that lead me to this: [K3s issu #1267](https://github.com/k3s-io/k3s/issues/1267)
+   - This was the solution I found that lead me to this: [K3s issue #1267](https://github.com/k3s-io/k3s/issues/1267)
 5. Joins each agent node to the server node from the controller using the `k3sup join` command
 
 ## What Next?
