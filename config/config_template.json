@@ -1,0 +1,26 @@
+{
+    "controller": {
+        "ip": "controller_ip",
+        "root_user": "controller_root_user"
+    },
+    "server": [
+        {
+            "ip": "server_ip",
+            "root_user": "server_root_user"
+        }
+    ],
+    "agent": [
+        {
+            "ip": "agent_1_ip",
+            "root_user":"agent_1_user"
+        },
+        {
+            "ip": "agent_2_ip",
+            "root_user":"agent_2_user"
+        },
+        {
+            "ip": "agent_3_ip",
+            "root_user":"agent_3_user"
+        }
+    ]
+}
