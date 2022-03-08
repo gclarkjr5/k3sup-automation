@@ -1,4 +1,4 @@
-# Automating a K3s architecture w/ K3sup
+# Automating a K3s cluster w/ K3sup
 
 ## Why?
 
