@@ -27,7 +27,11 @@ $ssh_test = $config |
 # on any fails, exit and end program
 $ssh_test |
     Where-Object {!$_.TcpTestSucceeded} |
-    ForEach-Object{Write-Error "SSH not available on port 22 for $($_.ComputerName)"; exit}
+    ForEach-Object{
+        Write-Error "SSH not available on port 22 for $($_.ComputerName)"
+        Write-Log $_
+        exit
+    }
 
 reset-k3sup $config
 
