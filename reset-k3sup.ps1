@@ -19,13 +19,15 @@ $config = $types.Name |
         $obj.$_ | Select-Object *, @{l="type"; e={$type}}
     }
 
-# test ssh connection
-$ssh_test = $config | ForEach-Object{Test-NetConnection -ComputerName $_.ip -Port 22}
+# test controller ssh connection
+$ssh_test = $config |
+    Where-Object {$_.type -eq "controller"} |
+    ForEach-Object{Test-NetConnection -ComputerName $_.ip -Port 22}
 
 # on any fails, exit and end program
 $ssh_test |
     Where-Object {!$_.TcpTestSucceeded} |
-    ForEach-Object {Write-Error "SSH not available on port 22 for $($_.ComputerName)"; exit}
+    ForEach-Object{Write-Error "SSH not available on port 22 for $($_.ComputerName)"; exit}
 
 reset-k3sup $config
 
